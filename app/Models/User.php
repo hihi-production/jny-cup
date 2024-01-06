@@ -44,3 +44,11 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 }
+
+// 1. bisa lakuiin
+// php artisan migrate:rollback
+
+// 2. bisa buat migrasi baru
+// php artisan make:migration add_column_to_users_table --table=users
+
+// 3. bisa php artisan php migrate:fresh
