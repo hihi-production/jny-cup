@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/dashboard';
+    protected $redirectTo = '/dashboard-page';
 
     /**
      * Create a new controller instance.
@@ -53,7 +53,7 @@ class LoginController extends Controller
         if (Auth::check()) {
             // dalam kondisi login
             // ke halaman dashboard page
-            return redirect()->to('/dashboard');
+            return redirect()->to('/dashboard-page');
         }
 
         // dalam kondisi tidak login
