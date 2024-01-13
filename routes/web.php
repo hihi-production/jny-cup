@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\ListLombaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,13 @@ Route::prefix('/')->group(function() {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard-page', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::prefix('dashboard-page')->group(function(){
+        Route::get('/list-lomba', [ListLombaController::class, 'index'])->name('lomba.index');
+
+        Route::get('/list-lomba/create', [ListLombaController::class, 'create'])->name('lomba.create');
+        Route::post('/list-lomba/create', [ListLombaController::class, 'store'])->name('lomba.store');
+    });
 });
 // Auth::routes();
 
