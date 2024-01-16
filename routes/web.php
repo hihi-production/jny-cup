@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('pages.client.index');
 });
 
 Route::get('dashboard-login', [LoginController::class, 'index'])->name('admin');
