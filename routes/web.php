@@ -18,8 +18,39 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
     return view('pages.client.index');
+});
+
+Route::get('/table-of-content', function () {
+    return view('pages.client.list');
+});
+
+Route::get('/schedule', function () {
+    return view('pages.client.schedule');
+});
+
+Route::get('/schedule/basketball-day-1', function () {
+    return view('pages.client.basket.day1');
+});
+
+Route::get('/schedule/basketball-day-2', function () {
+    return view('pages.client.basket.day2');
+});
+
+Route::get('/schedule/basketball-day-3', function () {
+    return view('pages.client.basket.day3');
+});
+
+Route::get('/schedule/basketball-day-4', function () {
+    return view('pages.client.basket.day4');
+});
+
+Route::get('/schedule/basketball-day-5', function () {
+    return view('pages.client.basket.day5');
+});
+
+Route::get('/basketball-rules', function () {
+    return view('pages.client.basket.rules');
 });
 
 Route::get('dashboard-login', [LoginController::class, 'index'])->name('admin');

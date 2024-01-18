@@ -10,7 +10,8 @@
 
     <style>
         body {
-            background-image: url("{{ asset('client/assets/img/background.jpeg') }}");
+            background-image: url("{{ asset('client/assets/img/booklet.png') }}");
+            background-size: cover;
         }
     </style>
   </head>
