@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Client\BasketballController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\ListLombaController;
 use Illuminate\Support\Facades\Auth;
@@ -23,35 +24,33 @@ Route::get('/', function () {
 
 Route::get('/table-of-content', function () {
     return view('pages.client.list');
-});
+})->name('table-of-content');
 
 Route::get('/schedule', function () {
     return view('pages.client.schedule');
-});
+})->name('schedule');
 
-Route::get('/schedule/basketball-day-1', function () {
-    return view('pages.client.basket.day1');
-});
+Route::get('/schedule/basketball', [BasketballController::class, 'index'])->name('basketball');
 
-Route::get('/schedule/basketball-day-2', function () {
-    return view('pages.client.basket.day2');
-});
+Route::get('/schedule/fenching', function() {
+    return view('pages.client.fencing.index');
+})->name('fencing');
 
-Route::get('/schedule/basketball-day-3', function () {
-    return view('pages.client.basket.day3');
-});
+Route::get('/schedule/swimming', function() {
+    return view('pages.client.swimming.index');
+})->name('swimming');
 
-Route::get('/schedule/basketball-day-4', function () {
-    return view('pages.client.basket.day4');
-});
+Route::get('/schedule/mural', function() {
+    return view('pages.client.mural.index');
+})->name('mural');
 
-Route::get('/schedule/basketball-day-5', function () {
-    return view('pages.client.basket.day5');
-});
+Route::get('/schedule/dance', function() {
+    return view('pages.client.dance.index');
+})->name('dance');
 
-Route::get('/basketball-rules', function () {
-    return view('pages.client.basket.rules');
-});
+Route::get('/schedule/band', function() {
+    return view('pages.client.band.index');
+})->name('band');
 
 Route::get('dashboard-login', [LoginController::class, 'index'])->name('admin');
 
@@ -69,6 +68,10 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/list-lomba/create', [ListLombaController::class, 'create'])->name('lomba.create');
         Route::post('/list-lomba/create', [ListLombaController::class, 'store'])->name('lomba.store');
+
+        Route::get('/basketball-schedule', [BasketballController::class, 'list'])->name('basketball.index');
+        Route::get('/basketball-schedule/create', [BasketballController::class, 'create'])->name('basketball.create');
+        Route::post('/basketball-schedule/create', [BasketballController::class, 'store'])->name('basketball.store');
     });
 });
 // Auth::routes();

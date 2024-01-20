@@ -16,6 +16,7 @@
             padding: 0;
             cursor: pointer;
             outline-offset: 4px;
+            text-decoration: none;
         }
         .front {
             display: block;
@@ -58,11 +59,11 @@
     <div class="container vh-100">
         <div class="w-100 h-100 position-relative">
             <img src="{{ asset('client/assets/img/base.png') }}" class="w-100 h-100 image-cover" alt="jny-cup">
-            <button class="pushable position-absolute btn-position">
+            <a href="{{ route('table-of-content') }}" class="pushable position-absolute btn-position">
                 <span class="front">
                   Start Now
                 </span>
-              </button>
+            </a>
         </div>
     </div>
 @endsection

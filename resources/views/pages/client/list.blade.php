@@ -18,7 +18,7 @@
             <h2 class="text-capitalize text-center">booklet</h2>
             <h3 class="text-uppercase text-center">table of contents:</h3>
             <div class="text-center" style="list-style-type: none">
-                <li><a href="#">schedule</a></li>
+                <li><a href="{{ route('schedule') }}">schedule</a></li>
                 <li><a href="#">rules</a></li>
                 <li><a href="#">sponsors</a></li>
             </div>

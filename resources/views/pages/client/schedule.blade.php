@@ -21,6 +21,30 @@
             </h3>
             <br>
 
+            <ul class="nav justify-content-center mb-3">
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #E0F46E" aria-current="page" href="{{ route('schedule') }}">Schedule Event</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #E0F46E" href="{{ route('basketball') }}">Basketball Schedule</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #E0F46E" href="{{ route('fencing') }}">Fencing Schedule</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #E0F46E" href="{{ route('swimming') }}">Swimming Schedule</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #E0F46E" href="{{ route('mural') }}">Mural Schedule</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #E0F46E" href="{{ route('dance') }}">Dance Schedule</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #E0F46E" href="{{ route('band') }}">Band Schedule</a>
+                </li>
+            </ul>
+
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>

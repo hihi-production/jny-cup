@@ -72,10 +72,10 @@
                             </a>
                         </li>
 
-                        <li class="sidebar-item">
-                            <a href="index.html" class='sidebar-link'>
+                        <li class="sidebar-item {{ Request::route()->getName() == 'basketball.index' ? 'active' : null }}">
+                            <a href="{{ route('basketball.index') }}" class='sidebar-link'>
                                 <i class="bi bi-calendar3"></i>
-                                <span>Schedules</span>
+                                <span>Basketball Schedules</span>
                             </a>
                         </li>
 
