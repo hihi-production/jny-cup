@@ -24,9 +24,13 @@
 @section('content')
     <div class="container">
         <div class="py-5" style="color: #E0F46E">
-            <h1 class="text-capitalize">dance schedule</h1>
 
-            <br>
+            <h1 class="text-capitalize pb-5">
+                <a href="{{ route('schedule') }}" style="color: #E0F46E" class="text-decoration-none">
+                    <i class="fa-solid fa-arrow-left-long"></i>
+                    &nbsp; dance schedule
+                </a>
+            </h1>
 
             <div class="table-responsive">
                 <table class="table table-bordered">

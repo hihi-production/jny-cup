@@ -15,13 +15,20 @@
 @section('content')
     <div class="container">
         <div class="py-5" style="color: #E0F46E">
-            <h1 class="text-capitalize">schedule</h1>
+
+            <h1 class="text-capitalize pb-3">
+                <a href="{{ route('table-of-content') }}" style="color: #E0F46E" class="text-decoration-none">
+                    <i class="fa-solid fa-arrow-left-long"></i>
+                    &nbsp; schedule
+                </a>
+            </h1>
+
             <h3>
                 The JNY Cup 2024 event will commence from January 19th until January 26th (1 week long).
             </h3>
             <br>
 
-            <ul class="nav justify-content-center mb-3">
+            <ul class="nav justify-content-center my-4">
                 <li class="nav-item">
                     <a class="nav-link" style="color: #E0F46E" aria-current="page" href="{{ route('schedule') }}">Schedule Event</a>
                 </li>
