@@ -34,6 +34,36 @@ class DanceChampionController extends Controller
 
         Champion::create($field);
 
-        return redirect()->route('dance.champion.index')->with('success', 'Data berhasil ditambahkan');
+        return redirect()->route('dance.champion.index')->with([
+            'message' => 'Dance Champions created successfully.',
+            'status'  => 'success',
+        ]);
+    }
+
+    public function edit($id)
+    {
+        $result = Champion::findOrFail($id);
+
+        return view('pages.dashboard.result.dance.edit', compact('result'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'team' => 'required',
+        ]);
+
+        $field = [
+            'competition_name' => 'dance',
+            'team' => $request->team,
+            'place' => $request->place,
+        ];
+
+        Champion::findOrFail($id)->update($field);
+
+        return redirect()->route('dance.champion.index')->with([
+            'message' => 'Dance Champions updated successfully.',
+            'status'  => 'success',
+        ]);
     }
 }

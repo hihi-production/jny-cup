@@ -81,30 +81,44 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/basketball-schedule', [BasketballController::class, 'list'])->name('basketball.index');
         Route::get('/basketball-schedule/create', [BasketballController::class, 'create'])->name('basketball.create');
         Route::post('/basketball-schedule/create', [BasketballController::class, 'store'])->name('basketball.store');
+        Route::get('/basketball-schedule/{id}/edit', [BasketballController::class, 'edit'])->name('basketball.edit');
+        Route::put('/basketball-schedule/{id}/edit', [BasketballController::class, 'update'])->name('basketball.update');
 
         Route::get('/basketball/champion', [BasketBallChampionController::class, 'index'])->name('basket.champion.index');
         Route::get('/basketball/champion/create', [BasketBallChampionController::class, 'create'])->name('basket.champion.create');
         Route::post('/basketball/champion/create', [BasketBallChampionController::class, 'store'])->name('basket.champion.store');
+        Route::get('/basketball/champion/{id}/edit', [BasketBallChampionController::class, 'edit'])->name('basket.champion.edit');
+        Route::put('/basketball/champion/{id}/edit', [BasketBallChampionController::class, 'update'])->name('basket.champion.update');
 
         Route::get('/fencing/champion', [FencingChampionController::class, 'index'])->name('fencing.champion.index');
         Route::get('/fencing/champion/create', [FencingChampionController::class, 'create'])->name('fencing.champion.create');
         Route::post('/fencing/champion/create', [FencingChampionController::class, 'store'])->name('fencing.champion.store');
+        Route::get('/fencing/champion/{id}/edit', [FencingChampionController::class, 'edit'])->name('fencing.champion.edit');
+        Route::put('/fencing/champion/{id}/edit', [FencingChampionController::class, 'update'])->name('fencing.champion.update');
 
         Route::get('/swimming/champion', [SwimmingChampionController::class, 'index'])->name('swimming.champion.index');
         Route::get('/swimming/champion/create', [SwimmingChampionController::class, 'create'])->name('swimming.champion.create');
         Route::post('/swimming/champion/create', [SwimmingChampionController::class, 'store'])->name('swimming.champion.store');
+        Route::get('/swimming/champion/{id}/edit', [SwimmingChampionController::class, 'edit'])->name('swimming.champion.edit');
+        Route::put('/swimming/champion/{id}/edit', [SwimmingChampionController::class, 'update'])->name('swimming.champion.update');
 
         Route::get('/mural/champion', [MuralChampionController::class, 'index'])->name('mural.champion.index');
         Route::get('/mural/champion/create', [MuralChampionController::class, 'create'])->name('mural.champion.create');
         Route::post('/mural/champion/create', [MuralChampionController::class, 'store'])->name('mural.champion.store');
+        Route::get('/mural/champion/{id}/edit', [MuralChampionController::class, 'edit'])->name('mural.champion.edit');
+        Route::put('/mural/champion/{id}/edit', [MuralChampionController::class, 'update'])->name('mural.champion.update');
 
         Route::get('/dance/champion', [DanceChampionController::class, 'index'])->name('dance.champion.index');
         Route::get('/dance/champion/create', [DanceChampionController::class, 'create'])->name('dance.champion.create');
         Route::post('/dance/champion/create', [DanceChampionController::class, 'store'])->name('dance.champion.store');
+        Route::get('/dance/champion/{id}/edit', [DanceChampionController::class, 'edit'])->name('dance.champion.edit');
+        Route::put('/dance/champion/{id}/edit', [DanceChampionController::class, 'update'])->name('dance.champion.update');
 
         Route::get('/band/champion', [BandChampionController::class, 'index'])->name('band.champion.index');
         Route::get('/band/champion/create', [BandChampionController::class, 'create'])->name('band.champion.create');
         Route::post('/band/champion/create', [BandChampionController::class, 'store'])->name('band.champion.store');
+        Route::get('/band/champion/{id}/edit', [BandChampionController::class, 'edit'])->name('band.champion.edit');
+        Route::put('/band/champion/{id}/edit', [BandChampionController::class, 'update'])->name('band.champion.update');
     });
 });
 

@@ -34,6 +34,36 @@ class MuralChampionController extends Controller
 
         Champion::create($field);
 
-        return redirect()->route('mural.champion.index')->with('success', 'Data berhasil ditambahkan');
+        return redirect()->route('mural.champion.index')->with([
+            'message' => 'Mural Champions created successfully.',
+            'status'  => 'success',
+        ]);
+    }
+
+    public function edit($id)
+    {
+        $result = Champion::findOrFail($id);
+
+        return view('pages.dashboard.result.mural.edit', compact('result'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'team' => 'required',
+        ]);
+
+        $field = [
+            'competition_name' => 'mural',
+            'team' => $request->team,
+            'place' => $request->place,
+        ];
+
+        Champion::findOrFail($id)->update($field);
+
+        return redirect()->route('mural.champion.index')->with([
+            'message' => 'Mural Champions updated successfully.',
+            'status'  => 'success',
+        ]);
     }
 }

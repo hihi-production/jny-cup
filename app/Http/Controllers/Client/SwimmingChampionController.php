@@ -34,6 +34,36 @@ class SwimmingChampionController extends Controller
 
         Champion::create($field);
 
-        return redirect()->route('swimming.champion.index')->with('success', 'Data berhasil ditambahkan');
+        return redirect()->route('swimming.champion.index')->with([
+            'message' => 'Swimming Champions created successfully.',
+            'status'  => 'success',
+        ]);
+    }
+
+    public function edit($id)
+    {
+        $result = Champion::findOrFail($id);
+
+        return view('pages.dashboard.result.swimming.edit', compact('result'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'team' => 'required',
+        ]);
+
+        $field = [
+            'competition_name' => 'swimming',
+            'team' => $request->team,
+            'place' => $request->place,
+        ];
+
+        Champion::findOrFail($id)->update($field);
+
+        return redirect()->route('swimming.champion.index')->with([
+            'message' => 'Swimming Champions updated successfully.',
+            'status'  => 'success',
+        ]);
     }
 }

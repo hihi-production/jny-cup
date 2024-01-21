@@ -61,13 +61,14 @@
                                     <th scope="col">Time</th>
                                     <th scope="col">Match</th>
                                     <th scope="col">Venue</th>
+                                    <th scope="col">Score</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 @if ($day1->isEmpty())
                                     <tr>
-                                        <td colspan="5" class="text-center">Data Is Empty</td>
+                                        <td colspan="6" class="text-center">Data Is Empty</td>
                                     </tr>
                                 @endif
                                 @foreach ($day1 as $data1)
@@ -77,6 +78,7 @@
                                     <td>{{ $data1->start_time }} - {{ $data1->end_time }}</td>
                                     <td>{{ $data1->team_a }} vs {{ $data1->team_b }}</td>
                                     <td>MPSH</td>
+                                    <td>{{ $data1->score_a }} - {{ $data1->score_b }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -97,13 +99,14 @@
                                     <th scope="col">Time</th>
                                     <th scope="col">Match</th>
                                     <th scope="col">Venue</th>
+                                    <th scope="col">Score</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 @if ($day2->isEmpty())
                                     <tr>
-                                        <td colspan="5" class="text-center">Data Is Empty</td>
+                                        <td colspan="6" class="text-center">Data Is Empty</td>
                                     </tr>
                                 @endif
                                 @foreach ($day2 as $data2)
@@ -113,6 +116,7 @@
                                     <td>{{ $data2->start_time }} - {{ $data2->end_time }}</td>
                                     <td>{{ $data2->team_a }} vs {{ $data2->team_b }}</td>
                                     <td>MPSH</td>
+                                    <td>{{ $data2->score_a }} - {{ $data2->score_b }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -131,13 +135,14 @@
                                     <th scope="col">Time</th>
                                     <th scope="col">Match</th>
                                     <th scope="col">Venue</th>
+                                    <th scope="col">Score</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 @if ($day3->isEmpty())
                                     <tr>
-                                        <td colspan="5" class="text-center">Data Is Empty</td>
+                                        <td colspan="6" class="text-center">Data Is Empty</td>
                                     </tr>
                                 @endif
                                 @foreach ($day3 as $data3)
@@ -147,6 +152,7 @@
                                     <td>{{ $data3->start_time }} - {{ $data3->end_time }}</td>
                                     <td>{{ $data3->team_a }} vs {{ $data3->team_b }}</td>
                                     <td>MPSH</td>
+                                    <td>{{ $data3->score_a }} - {{ $data3->score_b }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -164,13 +170,14 @@
                                     <th scope="col">Time</th>
                                     <th scope="col">Match</th>
                                     <th scope="col">Venue</th>
+                                    <th scope="col">Score</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 @if ($semifinals->isEmpty())
                                     <tr>
-                                        <td colspan="5" class="text-center">Data Is Empty</td>
+                                        <td colspan="6" class="text-center">Data Is Empty</td>
                                     </tr>
                                 @endif
                                 @foreach ($semifinals as $semifinal)
@@ -180,6 +187,7 @@
                                     <td>{{ $semifinal->start_time }} - {{ $semifinal->end_time }}</td>
                                     <td>{{ $semifinal->team_a }} vs {{ $semifinal->team_b }}</td>
                                     <td>MPSH</td>
+                                    <td>{{ $semifinal->score_a }} - {{ $semifinal->score_b }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -197,13 +205,14 @@
                                     <th scope="col">Time</th>
                                     <th scope="col">Match</th>
                                     <th scope="col">Venue</th>
+                                    <th scope="col">Score</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 @if ($finals->isEmpty())
                                     <tr>
-                                        <td colspan="5" class="text-center">Data Is Empty</td>
+                                        <td colspan="6" class="text-center">Data Is Empty</td>
                                     </tr>
                                 @endif
 
@@ -214,6 +223,7 @@
                                         <td>{{ $final->start_time }} - {{ $final->end_time }}</td>
                                         <td>{{ $final->team_a }} vs {{ $final->team_b }}</td>
                                         <td>MPSH</td>
+                                        <td>{{ $final->score_a }} - {{ $final->score_b }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

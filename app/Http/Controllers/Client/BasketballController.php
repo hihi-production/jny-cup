@@ -54,6 +54,44 @@ class BasketballController extends Controller
 
         BasketballSchedule::create($field);
 
-        return redirect()->route('basketball.index')->with('success', 'Basketball Schedule created successfully.');
+        return redirect()->route('basketball.index')->with([
+            'message' => 'Basketball Schedule created successfully.',
+            'status'  => 'success',
+        ]);
+    }
+
+    public function edit($id)
+    {
+        $schedule = BasketballSchedule::findOrFail($id);
+
+        return view('pages.dashboard.basketball.edit', compact('schedule'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'team_a' => 'required',
+            'team_b' => 'required',
+        ]);
+
+        $field = [
+            'team_a' => $request->team_a,
+            'team_b' => $request->team_b,
+            'phase' => $request->phase,
+            'category' => $request->category,
+            'start_time' => $request->start_time,
+            'end_time' => $request->end_time,
+            'venue' => 'mpsh',
+            'day' => $request->day,
+            'score_a' => $request->score_a,
+            'score_b' => $request->score_b,
+        ];
+
+        BasketballSchedule::findOrFail($id)->update($field);
+
+        return redirect()->route('basketball.index')->with([
+            'message' => 'Basketball Schedule updated successfully.',
+            'status'  => 'success',
+        ]);
     }
 }

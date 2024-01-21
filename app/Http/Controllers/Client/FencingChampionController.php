@@ -34,6 +34,36 @@ class FencingChampionController extends Controller
 
         Champion::create($field);
 
-        return redirect()->route('fencing.champion.index')->with('success', 'Data berhasil ditambahkan');
+        return redirect()->route('fencing.champion.index')->with([
+            'message' => 'Fencing Champions created successfully.',
+            'status'  => 'success',
+        ]);
+    }
+
+    public function edit($id)
+    {
+        $result = Champion::findOrFail($id);
+
+        return view('pages.dashboard.result.fencing.edit', compact('result'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'team' => 'required',
+        ]);
+
+        $field = [
+            'competition_name' => 'fencing',
+            'team' => $request->team,
+            'place' => $request->place,
+        ];
+
+        Champion::findOrFail($id)->update($field);
+
+        return redirect()->route('fencing.champion.index')->with([
+            'message' => 'Fencing Champions updated successfully.',
+            'status'  => 'success',
+        ]);
     }
 }

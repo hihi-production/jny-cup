@@ -35,6 +35,37 @@ class BasketBallChampionController extends Controller
 
         Champion::create($field);
 
-        return redirect()->route('basket.champion.index')->with('success', 'Data berhasil ditambahkan');
+        return redirect()->route('basket.champion.index')->with([
+            'message' => 'Basketball Champions created successfully.',
+            'status'  => 'success',
+        ]);
+    }
+
+    public function edit($id)
+    {
+        $result = Champion::findOrFail($id);
+
+        return view('pages.dashboard.result.basket.edit', compact('result'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'team' => 'required',
+        ]);
+
+        $field = [
+            'competition_name' => 'basketball',
+            'category' => $request->category,
+            'team' => $request->team,
+            'place' => $request->place,
+        ];
+
+        Champion::findOrFail($id)->update($field);
+
+        return redirect()->route('basket.champion.index')->with([
+            'message' => 'Basketball Champions updated successfully.',
+            'status'  => 'success',
+        ]);
     }
 }
